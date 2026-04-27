@@ -8,7 +8,7 @@ import { useState } from "react";
     const {authorizationToken} = useAuth();
     const getContactData = async () =>{
         try{
-            const response = await fetch("http://localhost:5000/api/admin/contacts",{
+            const response = await fetch("https://mern-project-onz2.onrender.com",{
                 method:"GET",
                 headers:{
                     Authorization:authorizationToken,
@@ -28,7 +28,7 @@ import { useState } from "react";
     // defining the function delete contactbyid
     const deleteContactById = async (_id) =>{
         try{
-          const response = await fetch(`http://localhost:5000/api/admin/contacts/delete/${_id}`,{
+          const response = await fetch(`https://mern-project-onz2.onrender.com/api/admin/contacts/delete/${_id}`,{
             method:"DELETE",
             headers:{
                 Authorization:authorizationToken,

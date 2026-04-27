@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        "http://localhost:5000/api/auth/user",
+        "https://mern-project-onz2.onrender.com/api/auth/user",
         {
           method: "GET",
           headers: {
@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }) => {
   const getServices = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/data/service"
+        "https://mern-project-onz2.onrender.com/api/data/service"
       );
 
       const data = await response.json();

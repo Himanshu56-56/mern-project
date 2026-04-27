@@ -19,7 +19,7 @@ export const AdminUpdateUser = () => {
   const getSingleUser = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/users/${id}`,
+        `https://mern-project-onz2.onrender.com/api/admin/users/${id}`,
         {
           headers: {
             Authorization: authorizationToken,
@@ -55,7 +55,7 @@ export const AdminUpdateUser = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/users/update/${id}`,
+        `https://mern-project-onz2.onrender.com/api/admin/users/update/${id}`,
         {
           method: "PATCH",
           headers: {

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
 
-const URL =  "http://localhost:5000/api/auth/login";
+const URL =  "https://mern-project-onz2.onrender.com/api/auth/login";
 
 export const Login = () => {
   const [user, setUser] = useState({

@@ -9,10 +9,11 @@ const adminRoute = require("./router/admin-router");
 const connectDb=require("./utils/db");
 const errorMiddleware = require('./middleware/error-middleware');
 const corsOption = {
-    origin:"http://localhost:5173",
-    methods:"GET,POST,PUT,PATCH,DELETE,HEAD",
-    Credentials:true,
+  origin: "*",
+  methods: "GET,POST,PUT,PATCH,DELETE,HEAD",
+  credentials: true,
 };
+
 app.use(cors(corsOption));
 app.use(express.json());
 

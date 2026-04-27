@@ -1,0 +1,152 @@
+/* ================= NAVBAR (BLACK + PURPLE THEME) ================= */
+
+header{
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #4f46e5
+  ); /* 👈 dark purple blend */
+  border-bottom: 0.1rem solid rgba(255,255,255,0.08);
+  position: static;
+  top: 0;
+  z-index: 1000;
+}
+
+/* container */
+header .container{
+  max-width: 140rem;
+  padding: 2.4rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* logo */
+.logo-brand a{
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.12rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logo-brand a:hover{
+  color: #e0e7ff;
+  text-shadow: 0 0 12px rgba(99,102,241,0.8);
+}
+
+/* nav list */
+nav ul{
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+/* nav links */
+nav ul li a{
+  font-size: 2rem;
+  font-weight: 500;
+  color: #e5e7eb;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* underline glow */
+nav ul li a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.6rem;
+  width: 0%;
+  height: 0.2rem;
+  background: linear-gradient(
+    90deg,
+    #a5b4fc,
+    #6366f1
+  );
+  box-shadow: 0 0 10px rgba(99,102,241,0.8);
+  transition: width 0.3s ease;
+}
+
+/* hover */
+nav ul li a:hover{
+  color: #ffffff;
+}
+
+nav ul li a:hover::after{
+  width: 100%;
+}
+
+/* active link */
+nav ul li a.active{
+  color: #ffffff;
+}
+
+nav ul li a.active::after{
+  width: 100%;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px){
+  nav ul{
+    gap: 2rem;
+  }
+
+  .logo-brand a{
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px){
+  header .container{
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  nav ul{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+}
+/* ================= NAVBAR LI HOVER EFFECT ================= */
+
+nav ul li{
+  position: relative;
+  transition: transform 0.35s ease;
+}
+
+/* li hover lift */
+nav ul li:hover{
+  transform: translateY(-4px);
+}
+
+/* background glow on li */
+nav ul li::before{
+  content: "";
+  position: absolute;
+  inset: -0.6rem -1.2rem;
+  background: radial-gradient(
+    circle at center,
+    rgba(99,102,241,0.25),
+    transparent 70%
+  );
+  opacity: 0;
+  border-radius: 1.2rem;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+/* show glow */
+nav ul li:hover::before{
+  opacity: 1;
+}
+
+/* keep text above glow */
+nav ul li a{
+  position: relative;
+  z-index: 1;
+}
+

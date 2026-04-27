@@ -1,0 +1,53 @@
+.section-footer{
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #4f46e5
+  ); 
+  color: #ffffff;
+  padding: 3rem 0 1.5rem 0;   /* 👈 padding kam */
+}
+
+.section-footer h2{
+  font-size: 2.2rem;          /* 👈 chhota heading */
+  margin-bottom: 1rem;
+}
+
+.section-footer h3{
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.section-footer p,
+.section-footer li{
+  color: #d1d5db;
+  font-size: 1.4rem;          /* 👈 text chhota */
+  line-height: 1.6;
+}
+
+.section-footer ul{
+  list-style: none;
+  padding: 0;
+}
+
+.section-footer ul li{
+  margin-bottom: 0.6rem;      /* 👈 gap kam */
+}
+
+.section-footer a{
+  color: #d1d5db;
+  text-decoration: none;
+}
+
+.section-footer a:hover{
+  color:  #38bdf8;
+}
+
+/* bottom copyright */
+.footer-bottom{
+  margin-top: 2rem;           /* 👈 gap kam */
+  border-top: 0.1rem solid #1f2937;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 1.3rem;
+}

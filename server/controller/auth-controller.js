@@ -23,9 +23,7 @@ const register =async(req,res,next)=>{
         // const saltRound =10;
         // const hash_password = await bcrypt.hash(password,saltRound);
 
-       const saltRound = 10;
-const hash_password = await bcrypt.hash(password, saltRound);
-
+       
 const userCreated = await User.create({
   username,
   email,

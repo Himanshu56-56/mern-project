@@ -8,35 +8,32 @@ const home=async(req,res)=>{
     }
 };
  
-const register =async(req,res,next)=>{
-    try{
-        console.log(req.body);
-        const{username, email, phone, password}=req.body;
+const register = async (req, res, next) => {
+  try {
+    const { username, email, phone, password } = req.body;
 
-        const userExist =await User.findOne({email});
-        if(userExist){
-            return res.status(400).json({message:"email already exists"});
-        }
-
-        // hash the password
-        
-        // const saltRound =10;
-        // const hash_password = await bcrypt.hash(password,saltRound);
-
-       
-const userCreated = await User.create({
-  username,
-  email,
-  phone,
-  password: hash_password,
-});
-          res.status(201).json({msg:"Registration Successfully", token:await userCreated.generateToken(),userId:userCreated.id.toString(),});
-    }catch(error){
-        // res.status(500).json("internal server error");
-      next(error);
+    const userExist = await User.findOne({ email });
+    if (userExist) {
+      return res.status(400).json({ message: "email already exists" });
     }
-};
 
+    const userCreated = await User.create({
+      username,
+      email,
+      phone,
+      password, // ✅ raw password
+    });
+
+    res.status(201).json({
+      msg: "Registration Successfully",
+      token: await userCreated.generateToken(),
+      userId: userCreated.id.toString(),
+    });
+
+  } catch (error) {
+    next(error);
+  }
+};
 // user login logic
 const login = async (req, res, next) => {
   try {
